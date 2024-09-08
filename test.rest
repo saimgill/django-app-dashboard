@@ -1,0 +1,113 @@
+#### Login
+
+POST http://127.0.0.1:8000/login
+Content-Type: application/json
+
+{
+  "username": "saimgill34+7@gmail.com",
+  "password": "p@ssword123"
+}
+
+#### Signup
+
+POST http://127.0.0.1:8000/signup
+Content-Type: application/json
+
+{
+  "username": "saimgill34+1@gmail.com",
+  "password": "p@ssword123",
+  "email": "saimgill34+6@gmail.com"
+}
+
+#### Reset Password
+
+POST http://127.0.0.1:8000/password-reset/
+Content-Type: application/json
+
+{
+  "email": "saimgill34+6@gmail.com"
+}
+
+#### Reset Password Confirm - replace url 
+
+POST http://127.0.0.1:8000/password-reset-confirm/Mg/cd1pf1-9198ba6f331cfa6f72d41b42e9337372/
+Content-Type: application/json
+
+{
+  "new_password1": "p@ssword12",
+  "new_password2": "p@ssword12"
+}
+
+
+#### Test Token
+
+GET http://127.0.0.1:8000/test-token
+Content-Type: application/json
+Authorization: Token e1f63b97b6a251bfa61c51175d8d217ec8bfd46f
+
+{}
+
+#### Get All Apps
+
+GET http://127.0.0.1:8000/apps
+Content-Type: application/json
+Authorization: Token 41b4b86fc4ca7b9acf7d4eab3b2d5aff5f6166f0
+
+{}
+
+#### Create App
+
+POST http://127.0.0.1:8000/apps
+Content-Type: application/json
+Authorization: Token e6faf32bcef92e940a0e25b7a2f32398ec565866
+
+{
+  "name": "FaceTime User 3",
+  "description": "Video and audio calls"
+}
+
+#### Update App
+
+PUT http://127.0.0.1:8000/apps/2/
+Content-Type: application/json
+Authorization: Token 41b4b86fc4ca7b9acf7d4eab3b2d5aff5f6166f0
+
+{
+  "name": "FaceTime",
+  "description": "Video and audio calls"
+}
+
+#### Delete App
+
+DELETE http://127.0.0.1:8000/apps/2/
+Content-Type: application/json
+Authorization: Token 41b4b86fc4ca7b9acf7d4eab3b2d5aff5f6166f0
+
+{}
+
+#### Get App By Id
+
+GET http://127.0.0.1:8000/apps/5/
+Content-Type: application/json
+Authorization: Token e6faf32bcef92e940a0e25b7a2f32398ec565866
+
+{}
+
+#### Get Plans
+
+GET http://127.0.0.1:8000/plans/
+Content-Type: application/json
+Authorization: Token e6faf32bcef92e940a0e25b7a2f32398ec565866
+
+{}
+
+#### Update Subscription - Provide App Id as param
+
+PUT http://127.0.0.1:8000/subscriptions/7/
+Content-Type: application/json
+Authorization: Token e6faf32bcef92e940a0e25b7a2f32398ec565866
+
+{
+  "plan_id": "2",
+  "active": false
+}
